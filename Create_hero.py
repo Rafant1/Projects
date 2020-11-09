@@ -12,6 +12,30 @@ class Hero():
         self.magic_attack_points = Hmagic_attack_points
         self.luck = Hluck
 
+    def getHealth(self):
+        return self.health
+    def getAttack(self):
+        return self.attack_points
+    def getDefense(self):
+        return self.defense_points
+    def getRangeAttack(self):
+        return self.range_attack_points
+    def getMagicAttack(self):
+        return self.magic_attack_points
+    def getLuck(self):
+        return self.luck
+
+
+    def setHealth(self, newHealth):
+        self.health = newHealth
+    def setAttack(self, newAttack):
+        self.attack_points = newAttack
+    def setDefense(self, newDefense):
+        self.defense_points = newDefense
+    def setRangeAttack(self, newRange):
+        self.range_attack_points = newRange
+    def setMagicAttack(self, newMagic):
+        self.magic_attack_points = newMagic
 
 
 def Create_your_class():

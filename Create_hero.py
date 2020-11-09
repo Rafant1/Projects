@@ -43,9 +43,12 @@ def Create_your_class():
     name = input("What name you would like to chose? ")
     print(f"Hello, {name}.")
 
+    a = None
 
-    a = input('''
-Which class would you like to chose?"
+
+    while a != "1" and a != "2" and a != "3" and a != "4":
+        a = input('''
+Which class would you like to chose?
 Warrior(1)
 Knight(2)
 Archer(3)
@@ -83,7 +86,7 @@ Mage(4)
     else:
         print("You didn't chose any class. Try again.")
 
-    input("\nPress enter to roll a dice.")
+    input("\nPress enter to roll a dice in order to check what is your luck value.")
     luck = random.randint(0, 10)
     print(f"Your hero has {luck} point(s) of luck out of 10.")
     return name, health, attack_points, defense_points, range_attack_points, magic_attack_points, luck, hero_class

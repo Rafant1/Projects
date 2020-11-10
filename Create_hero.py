@@ -60,22 +60,22 @@ Mage(4)
         health = 100
         attack_points = 10
         defense_points = 6
-        range_attack_points = 2
-        magic_attack_points = 0
+        range_attack_points = 4
+        magic_attack_points = 2
         hero_class = "Warrior"
     elif a == "2":
         health = 125
         attack_points = 6
         defense_points = 10
         range_attack_points = 2
-        magic_attack_points = 0
+        magic_attack_points = 1
         hero_class = "Knight"
     elif a == "3":
         health = 75
         attack_points = 4
         defense_points = 4
         range_attack_points = 8
-        magic_attack_points = 0
+        magic_attack_points = 2
         hero_class = "Archer"
     elif a == "4":
         health = 50

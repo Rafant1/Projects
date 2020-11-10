@@ -1,0 +1,9 @@
+spider
+skeleton
+dragon
+minotaur
+orc
+elf
+rat
+bat
+snake

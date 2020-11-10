@@ -14,6 +14,56 @@ class Enemy():
         self.range_attack_vulnability = Erange_attack_vulnability
         self.magic_attack_vulnability = Emagic_attack_vulnability
 
+    def get_health(self):
+        return self.health
+    def get_special_attack(self):
+        return self.special_attack_points
+    def get_attack(self):
+        return self.attack_points
+    def get_defense(self):
+        return self.defense_points
+    def get_normal_attack_vulnability(self):
+        return self.normal_attack_vulnability
+    def get_range_attack_vulnability(self):
+        return self.range_attack_vulnability
+    def get_magic_attack_vulnability(self):
+        return self.magic_attack_vulnability
+
+    def set_health(self, new_health):
+        self.health = new_health
+    def set_attack(self, new_attack):
+        self.attack_points = new_attack
+    def set_defense(self, new_defense):
+        self.defense_points = new_defense
+    def set_special(self, new_special):
+        self.special_attack_points = new_special
+    def set_normal_attack_vulnability(self, new_attack_vulnability):
+        self.normal_attack_vulnability = new_attack_vulnability
+    def set_range_attack_vulnability(self, new_range_vulnability):
+        self.range_attack_points = new_range_vulnability
+    def magic_attack_vulnability(self, new_magic_attack_vulnability):
+        self.range_attack_points =new_magic_attack_vulnability
+
+
+
+    def setHealth(self, newHealth):
+        self.health = newHealth
+    def setAttack(self, newAttack):
+        self.attack_points = newAttack
+    def setDefense(self, newDefense):
+        self.defense_points = newDefense
+    def setRangeAttack(self, newRange):
+        self.range_attack_points = newRange
+    def setMagicAttack(self, newMagic):
+        self.magic_attack_points = newMagic
+
+
+
+
+
+
+
+
 def enemy_name_generator():
     file = open("Adjective.txt", "r")
     lines = file.readlines()

@@ -3,7 +3,7 @@ from pprint import pprint
 
 
 class Hero():
-    def __init__(self, Hname, Hhealth, Hattack_points, Hdefense_points, Hrange_attack_points, Hmagic_attack_points, Hluck):
+    def __init__(self, Hname, Hhealth, Hattack_points, Hdefense_points, Hrange_attack_points, Hmagic_attack_points, Hluck, Halive = True):
         self.name = Hname
         self.health = Hhealth
         self.attack_points = Hattack_points
@@ -11,6 +11,7 @@ class Hero():
         self.range_attack_points = Hrange_attack_points
         self.magic_attack_points = Hmagic_attack_points
         self.luck = Hluck
+        self.alive = Halive
 
     def get_health(self):
         return self.health
@@ -24,7 +25,8 @@ class Hero():
         return self.magic_attack_points
     def get_luck(self):
         return self.luck
-
+    def get_alive(self):
+        return self.alive
 
     def set_health(self, new_health):
         self.health = new_health
@@ -36,6 +38,8 @@ class Hero():
         self.range_attack_points = new_range
     def set_magic_attack(self, new_magic):
         self.magic_attack_points = new_magic
+    def set_alive(self, new_alive):
+        self.alive = new_alive
 
 
 def create_your_class():
@@ -63,6 +67,7 @@ Mage(4)
         range_attack_points = 4
         magic_attack_points = 2
         hero_class = "Warrior"
+        hero_alive = True
     elif a == "2":
         health = 125
         attack_points = 6
@@ -70,6 +75,7 @@ Mage(4)
         range_attack_points = 2
         magic_attack_points = 1
         hero_class = "Knight"
+
     elif a == "3":
         health = 75
         attack_points = 4
@@ -77,20 +83,22 @@ Mage(4)
         range_attack_points = 8
         magic_attack_points = 2
         hero_class = "Archer"
+
     elif a == "4":
         health = 50
-        attack_points = 2
+        attack_points = 3
         defense_points = 2
-        range_attack_points = 1
+        range_attack_points = 4
         magic_attack_points = 10
         hero_class = "Mage"
+
     else:
         print("You didn't chose any class. Try again.")
 
     input("\nPress enter to roll a dice in order to check what is your luck value.")
     luck = random.randint(0, 10)
     print(f"Your hero has {luck} point(s) of luck out of 10.")
-    return name, health, attack_points, defense_points, range_attack_points, magic_attack_points, luck, hero_class
+    return name, health, attack_points, defense_points, range_attack_points, magic_attack_points, luck, hero_class,
 
 
 
@@ -105,3 +113,4 @@ print(f"defense points: {Hero1.defense_points}")
 print(f"range attack points: {Hero1.range_attack_points}")
 print(f"magic attack points: {Hero1.magic_attack_points}")
 print(f"points of luck: {Hero1.luck}")
+print(Hero1.alive)

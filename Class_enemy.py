@@ -3,7 +3,7 @@ from pprint import pprint
 
 class Enemy():
     #Etype = enemy type(based on True or False of this parameter, the enemy will be regular or will become a boss)
-    def __init__(self, Ename, Etype, Ehealth, Especial_attack_points, Eattack_points, Edefense_points, Enormal_attack_vulnability, Erange_attack_vulnability, Emagic_attack_vulnability):
+    def __init__(self, Ename, Etype, Ehealth, Especial_attack_points, Eattack_points, Edefense_points, Enormal_attack_vulnability, Erange_attack_vulnability, Emagic_attack_vulnability, Ealive = True):
         self.name = Ename
         self.type = Etype
         self.health = Ehealth
@@ -13,6 +13,7 @@ class Enemy():
         self.normal_attack_vulnability = Enormal_attack_vulnability
         self.range_attack_vulnability = Erange_attack_vulnability
         self.magic_attack_vulnability = Emagic_attack_vulnability
+        self.alive = Ealive
 
     def get_health(self):
         return self.health
@@ -28,6 +29,9 @@ class Enemy():
         return self.range_attack_vulnability
     def get_magic_attack_vulnability(self):
         return self.magic_attack_vulnability
+    def get_alive(self):
+        return self.alive
+
 
     def set_health(self, new_health):
         self.health = new_health
@@ -41,21 +45,13 @@ class Enemy():
         self.normal_attack_vulnability = new_attack_vulnability
     def set_range_attack_vulnability(self, new_range_vulnability):
         self.range_attack_points = new_range_vulnability
-    def magic_attack_vulnability(self, new_magic_attack_vulnability):
-        self.range_attack_points =new_magic_attack_vulnability
+    def set_magic_attack_vulnability(self, new_magic_attack_vulnability):
+        self.range_attack_points = new_magic_attack_vulnability
+    def set_alive(self, new_alive):
+        self.alive = new_alive
 
 
 
-    def setHealth(self, newHealth):
-        self.health = newHealth
-    def setAttack(self, newAttack):
-        self.attack_points = newAttack
-    def setDefense(self, newDefense):
-        self.defense_points = newDefense
-    def setRangeAttack(self, newRange):
-        self.range_attack_points = newRange
-    def setMagicAttack(self, newMagic):
-        self.magic_attack_points = newMagic
 
 
 

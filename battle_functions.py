@@ -47,14 +47,29 @@ def player_attack(hero, enemy):
 
     elif player_attack_type == "2":
         chance_attack = random.randint(1, 10)
-        if chance_attack >=6:
+        if chance_attack > =6:
             enemy.set_health(enemy.get_health() - hero.get_range_attack() - enemy.get_range_attack_vulnability())
             print("You draw a bow ...")
             print(f"You dealt {hero.get_range_attack() + enemy.get_range_attack_vulnability()} damage points.")
             print(f"The actual enemy health is {enemy.get_health()}.\n")
 
+        else:
+            print("You draw a bow...")
+            print("Unfortunately, you missed.")
+            print(f"The actual enemy health is {enemy.get_health()}.\n")
 
+    elif player_attack_type == "3":
+        chance_attack = random.randint(1, 10)
+        if chance_attack >= 6:
+            enemy.set_health(enemy.get_health() - hero.get_magic_attack() - enemy.get_magic_attack_vulnability())
+            print("You cast a spell...")
+            print(f"You dealt {hero.get_magic_attack() + enemy.get_magic_attack_vulnability()} damage points.")
+            print(f"The actual enemy health is {enemy.get_health()}.\n")
 
+        else:
+            print("You cast a spell...")
+            print("Unfortunately, you missed.")
+            print(f"The actual enemy health is {enemy.get_health()}.\n")
 
 
 def battle(hero, enemy):

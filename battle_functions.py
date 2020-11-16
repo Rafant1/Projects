@@ -1,3 +1,10 @@
+def hero_dead(hero):
+    if hero.get_health() <= 0:
+        print("Unfortunately, the monster was stronger than you. You are dead.")
+        hero.set_alive(False)
+
+
+
 def enemy_dead(enemy):
     if enemy.get_health() <= 0:
         print("Congratulations! You defeated the monster!")
@@ -11,7 +18,7 @@ def enemy_attack(hero, enemy):
     if chance_attack >= 6:
         hero.set_health(hero.get_health() - (enemy.get_attack() * enemy_attack_multiplicator))
         print("It is the enemy turn...")
-        print(f"The enemy dealt you {enemy.get_attack() + enemy_attack_multiplicator} damage points.")
+        print(f"The enemy dealt you {enemy.get_attack() * enemy_attack_multiplicator} damage points.")
         print(f"Your actual health is {hero.get_health()} health points.\n")
     else:
         print("The enemy tried to hit you, but it missed.")
@@ -33,21 +40,30 @@ def player_attack(hero, enemy):
             print(f"You dealt {hero.get_attack() + enemy.get_normal_attack_vulnability()} damage points.")
             print(f"The actual enemy health is {enemy.get_health()}.\n")
 
-
         else:
             print("You swing the sword...")
             print("Unfortunately, you missed.")
+            print(f"The actual enemy health is {enemy.get_health()}.\n")
+
+    elif player_attack_type == "2":
+        chance_attack = random.randint(1, 10)
+        if chance_attack >=6:
+            enemy.set_health(enemy.get_health() - hero.get_range_attack() - enemy.get_range_attack_vulnability())
+            print("You draw a bow ...")
+            print(f"You dealt {hero.get_range_attack() + enemy.get_range_attack_vulnability()} damage points.")
             print(f"The actual enemy health is {enemy.get_health()}.\n")
 
 
 
 
 
-
 def battle(hero, enemy):
-    while enemy.get_alive() == True:
+    while enemy.get_alive() == True and hero.get_alive() == True:
         player_attack(hero,enemy)
         enemy_dead(enemy)
         if enemy.get_alive() == False:
             break
         enemy_attack(hero,enemy)
+        hero_dead(hero)
+        if hero.get_alive() == False:
+            break
